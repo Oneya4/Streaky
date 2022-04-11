@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '/screens/screens.dart';
+
 class WatchOnboardingVideo extends StatefulWidget {
   static const routeName = 'watch-onboarding';
   const WatchOnboardingVideo({Key? key}) : super(key: key);
@@ -56,13 +58,16 @@ class _WatchOnboardingVideoState extends State<WatchOnboardingVideo> {
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             shape: const StadiumBorder(),
-                            padding: const EdgeInsets.symmetric(horizontal: 23),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
                             primary: const Color(0xffE6A929),
                           ),
                         ),
                         MaterialButton(
                           child: const Text('Skip to login'),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushReplacementNamed(LoginScreen.routeName);
+                          },
                         ),
                       ],
                     ),

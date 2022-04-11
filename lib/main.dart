@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:streaky/screens/personal_info_screen.dart';
 import '/screens/screens.dart';
 // import 'package:flutter_native_splash/flutter_native_splash.dart';
 
@@ -20,12 +21,19 @@ class MyApp extends StatelessWidget {
       title: 'Streaky',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.blue,
+        colorScheme: const ColorScheme.light().copyWith(
+          primary: const Color(0xffE6A929),
+          secondary: const Color(0xff142CFF),
+        ),
       ),
       home: const OnboardingScreen(),
       routes: {
         WatchOnboardingVideo.routeName: (context) =>
             const WatchOnboardingVideo(),
+        LoginScreen.routeName: (context) => const LoginScreen(),
+        OtpScreen.routeName: (context) => const OtpScreen(),
+        PersonalInfoScreen.routeName: (ctx) => const PersonalInfoScreen(),
       },
     );
   }
